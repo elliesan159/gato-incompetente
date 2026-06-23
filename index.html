@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Adote um Gato Incompetente</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="telaInicial">
+
+        <h1>🐱 Adote um Gato Incompetente</h1>
+
+        <p>Escolha o nome do seu gato:</p>
+
+        <input
+            type="text"
+            id="nomeInput"
+            placeholder="Digite um nome">
+
+        <br>
+
+        <button id="adotarBtn">
+            Adotar
+        </button>
+
+    </div>
+
+    <div id="jogo" style="display:none;">
+
+        <h1 id="tituloGato">
+            🐱 Bigodes
+        </h1>
+
+        <div id="gatoContainer">
+
+            <svg
+                id="gato"
+                width="320"
+                height="320"
+                viewBox="0 0 320 320">
+
+                <!-- Orelha esquerda -->
+                <polygon
+                    points="80,80 120,20 150,90"
+                    fill="#f4a261" />
+
+                <!-- Orelha direita -->
+                <polygon
+                    points="240,80 200,20 170,90"
+                    fill="#f4a261" />
+
+                <!-- Cabeça -->
+                <circle
+                    cx="160"
+                    cy="140"
+                    r="90"
+                    fill="#f4a261" />
+
+                <!-- Corpo -->
+                <ellipse
+                    cx="160"
+                    cy="240"
+                    rx="70"
+                    ry="55"
+                    fill="#f4a261" />
+
+                <!-- Olho esquerdo -->
+                <circle
+                    cx="130"
+                    cy="130"
+                    r="10"
+                    fill="#000" />
+
+                <!-- Olho direito -->
+                <circle
+                    cx="190"
+                    cy="130"
+                    r="10"
+                    fill="#000" />
+
+                <!-- Nariz -->
+                <polygon
+                    points="160,150 150,165 170,165"
+                    fill="pink" />
+
+                <!-- Boca -->
+                <path
+                    d="M160 165 Q145 180 135 170"
+                    stroke="#000"
+                    stroke-width="3"
+                    fill="none" />
+
+                <path
+                    d="M160 165 Q175 180 185 170"
+                    stroke="#000"
+                    stroke-width="3"
+                    fill="none" />
+
+                <!-- Bigodes -->
+                <line
+                    x1="90"
+                    y1="150"
+                    x2="140"
+                    y2="155"
+                    stroke="#000"
+                    stroke-width="2" />
+
+                <line
+                    x1="90"
+                    y1="165"
+                    x2="140"
+                    y2="165"
+                    stroke="#000"
+                    stroke-width="2" />
+
+                <line
+                    x1="180"
+                    y1="155"
+                    x2="230"
+                    y2="150"
+                    stroke="#000"
+                    stroke-width="2" />
+
+                <line
+                    x1="180"
+                    y1="165"
+                    x2="230"
+                    y2="165"
+                    stroke="#000"
+                    stroke-width="2" />
+
+                <!-- Patas -->
+                <ellipse
+                    cx="130"
+                    cy="290"
+                    rx="18"
+                    ry="12"
+                    fill="#e76f51" />
+
+                <ellipse
+                    cx="190"
+                    cy="290"
+                    rx="18"
+                    ry="12"
+                    fill="#e76f51" />
+
+                <!-- Cauda -->
+                <path
+                    d="M220 240 Q290 210 250 140"
+                    stroke="#f4a261"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="round" />
+
+            </svg>
+
+        </div>
+
+        <button id="botaoDesastre">
+            😼 Deixar o gato sozinho
+        </button>
+
+        <div id="cartao">
+
+            <h2>
+                Última Catástrofe
+            </h2>
+
+            <p id="evento">
+                Nenhuma ainda.
+            </p>
+
+            <p id="justificativa">
+                Clique no botão.
+            </p>
+
+        </div>
+
+        <h2>
+            🌍 Países que baniram seu gato
+        </h2>
+
+        <div id="mapa">
+
+            <span class="pais">🇧🇷 Brasil</span>
+            <span class="pais">🇺🇸 EUA</span>
+            <span class="pais">🇯🇵 Japão</span>
+            <span class="pais">🇨🇦 Canadá</span>
+            <span class="pais">🇫🇷 França</span>
+            <span class="pais">🇦🇷 Argentina</span>
+            <span class="pais">🇮🇹 Itália</span>
+            <span class="pais">🇲🇽 México</span>
+            <span class="pais">🇬🇧 Reino Unido</span>
+            <span class="pais">🇩🇪 Alemanha</span>
+
+        </div>
+
+        <h2>
+            📜 Histórico das Besteiras
+        </h2>
+
+        <ul id="historico">
+
+        </ul>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #74c0fc,
+        #ffd43b
+    );
+
+    min-height:100vh;
+
+    text-align:center;
+
+    overflow-x:hidden;
+}
+
+#telaInicial{
+    padding-top:80px;
+}
+
+#telaInicial h1{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+#telaInicial p{
+    margin-bottom:15px;
+}
+
+#nomeInput{
+
+    width:min(90%,350px);
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.15);
+}
+
+#adotarBtn{
+
+    margin-top:20px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#51cf66;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+#adotarBtn:hover{
+    transform:scale(1.05);
+}
+
+#jogo{
+    padding:20px;
+}
+
+#tituloGato{
+
+    margin-bottom:10px;
+
+    color:#333;
+}
+
+#gatoContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:20px 0;
+}
+
+#gato{
+
+    width:min(80vw,320px);
+
+    height:auto;
+
+    display:block;
+
+    margin:auto;
+
+    filter:
+    drop-shadow(
+        0 15px 25px rgba(0,0,0,.25)
+    );
+
+    animation:
+    flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+#cauda{
+
+    transform-origin:280px 230px;
+
+    animation:
+    mexerCauda 2s infinite ease-in-out;
+}
+
+@keyframes mexerCauda{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(8deg);
+    }
+
+    50%{
+        transform:rotate(0deg);
+    }
+
+    75%{
+        transform:rotate(-8deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+    }
+
+}
+
+#botaoDesastre{
+
+    background:#ff6b6b;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 30px;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.2);
+}
+
+#botaoDesastre:hover{
+    transform:scale(1.05);
+}
+
+#cartao{
+
+    width:min(90%,900px);
+
+    margin:25px auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+}
+
+#evento{
+
+    font-size:clamp(
+        22px,
+        4vw,
+        40px
+    );
+
+    color:#ff5722;
+
+    font-weight:bold;
+}
+
+#justificativa{
+
+    margin-top:10px;
+
+    color:#555;
+
+    font-size:18px;
+}
+
+#mapa{
+
+    width:min(95%,1000px);
+
+    margin:20px auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+}
+
+.pais{
+
+    background:white;
+
+    padding:12px 18px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.1);
+
+    transition:.3s;
+}
+
+.banido{
+
+    background:#fa5252;
+
+    color:white;
+
+    transform:
+    scale(1.1)
+    rotate(-3deg);
+}
+
+#historico{
+
+    list-style:none;
+
+    width:min(90%,900px);
+
+    margin:25px auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:left;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+}
+
+#historico li{
+
+    margin-bottom:10px;
+
+    background:#fff3bf;
+
+    padding:10px;
+
+    border-radius:10px;
+}
+
+h2{
+
+    margin-top:25px;
+
+    color:#333;
+}
+
+@media(max-width:600px){
+
+    #botaoDesastre{
+
+        width:90%;
+
+        font-size:18px;
+    }
+
+    #tituloGato{
+
+        font-size:1.8rem;
+    }
+
+}
