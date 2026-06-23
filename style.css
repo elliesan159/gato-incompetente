@@ -443,13 +443,17 @@ body{
 
     width:min(95%,900px);
 
+    max-height:90vh;
+
+    overflow-y:auto;
+
     background:white;
 
     color:#222;
 
     border-radius:30px;
 
-    padding:40px;
+    padding:25px;
 
     box-shadow:
     0 20px 50px rgba(0,0,0,.4);
@@ -466,11 +470,13 @@ body{
 
     white-space:pre-line;
 
-    line-height:2;
+    line-height:1.5;
 
-    font-size:18px;
+    font-size:14px;
 
-    margin-bottom:30px;
+    margin-bottom:20px;
+
+    text-align:left;
 }
 
 #abracarGato{
@@ -541,5 +547,11 @@ body{
 
         width:90%;
     }
+    #mensagemFinal{
+
+    font-size:13px;
+
+    line-height:1.4;
+}
 
 }

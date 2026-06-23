@@ -470,13 +470,13 @@ body{
 
     white-space:pre-line;
 
-    line-height:1.8;
+    line-height:1.5;
 
-    font-size:18px;
+    font-size:14px;
+
+    margin-bottom:20px;
 
     text-align:left;
-
-    margin-bottom:30px;
 }
 
 #abracarGato{
@@ -547,18 +547,11 @@ body{
 
         width:90%;
     }
-    .finalCard{
+    #mensagemFinal{
 
-    max-height:85vh;
+    font-size:13px;
 
-    padding:20px;
-}
-
-#mensagemFinal{
-
-    font-size:16px;
-
-    line-height:1.7;
+    line-height:1.4;
 }
 
 }
