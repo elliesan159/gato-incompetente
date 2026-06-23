@@ -443,13 +443,17 @@ body{
 
     width:min(95%,900px);
 
+    max-height:90vh;
+
+    overflow-y:auto;
+
     background:white;
 
     color:#222;
 
     border-radius:30px;
 
-    padding:40px;
+    padding:25px;
 
     box-shadow:
     0 20px 50px rgba(0,0,0,.4);
@@ -466,9 +470,11 @@ body{
 
     white-space:pre-line;
 
-    line-height:2;
+    line-height:1.8;
 
     font-size:18px;
+
+    text-align:left;
 
     margin-bottom:30px;
 }
@@ -541,5 +547,18 @@ body{
 
         width:90%;
     }
+    .finalCard{
+
+    max-height:85vh;
+
+    padding:20px;
+}
+
+#mensagemFinal{
+
+    font-size:16px;
+
+    line-height:1.7;
+}
 
 }
