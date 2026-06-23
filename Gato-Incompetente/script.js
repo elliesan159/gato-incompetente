@@ -31,133 +31,112 @@ document.querySelectorAll(".pais");
 const gato =
 document.getElementById("gato");
 
+const finalSurpresa =
+document.getElementById("finalSurpresa");
+
+const mensagemFinal =
+document.getElementById("mensagemFinal");
+
+const abracarGato =
+document.getElementById("abracarGato");
+
+const ronrom =
+document.getElementById("ronrom");
+
 let nomeGato = "Bigodes";
 
-const catastrofes = [
+let capituloAtual = 0;
+
+const historia = [
 
 {
-evento:"tentou vender o Sol.",
-justificativa:"Ele achou que estava muito quente."
+evento:"🐱 Você encontrou um gato muito estranho.",
+justificativa:"Ele apareceu do nada e decidiu morar com você."
 },
 
 {
-evento:"abriu uma empresa de atum.",
-justificativa:"O plano era comer todo o estoque."
+evento:"📦 O gato encontrou uma caixa misteriosa.",
+justificativa:"Ele imediatamente declarou a caixa como território nacional."
 },
 
 {
-evento:"tentou hackear uma torradeira.",
-justificativa:"Pesquisa científica."
+evento:"👑 O Reino da Caixa foi fundado.",
+justificativa:"Seu gato se tornou rei sem realizar eleições."
 },
 
 {
-evento:"criou uma religião.",
-justificativa:"Ele era o único deus."
+evento:"📜 Uma constituição foi criada.",
+justificativa:"A única lei era: mais atum para todos."
 },
 
 {
-evento:"processou uma cadeira.",
-justificativa:"Ela olhou torto para ele."
+evento:"🐦 Um grupo de pombos entrou no reino.",
+justificativa:"Foi criado o Ministério dos Pombos."
 },
 
 {
-evento:"comprou 500 quilos de peixe.",
-justificativa:"Parecia promoção."
+evento:"🏛️ O reino começou a cobrar impostos.",
+justificativa:"O pagamento era feito exclusivamente em petiscos."
 },
 
 {
-evento:"declarou independência do sofá.",
-justificativa:"Questões políticas."
+evento:"🌎 Uma carta foi enviada para vários países.",
+justificativa:"Seu gato queria reconhecimento internacional."
 },
 
 {
-evento:"tentou ensinar peixes a voar.",
-justificativa:"Ele acreditava neles."
+evento:"🚫 Os países recusaram a proposta.",
+justificativa:"Seu gato ficou profundamente ofendido."
 },
 
 {
-evento:"tentou vender a Lua.",
-justificativa:"Ninguém estava usando."
+evento:"⚔️ Seu gato declarou guerra diplomática.",
+justificativa:"Ninguém levou muito a sério."
 },
 
 {
-evento:"fundou um país.",
-justificativa:"Faltava liderança mundial."
+evento:"✈️ Após perder a guerra, ele fugiu.",
+justificativa:"Chamou isso de retirada estratégica."
 },
 
 {
-evento:"tentou cozinhar um chinelo.",
-justificativa:"Parecia uma baguete."
+evento:"🌍 Alguns países decidiram bani-lo.",
+justificativa:"A situação saiu um pouco do controle."
 },
 
 {
-evento:"criou uma escola para pombos.",
-justificativa:"Educação é importante."
+evento:"🐟 Seu gato abriu uma empresa de atum.",
+justificativa:"Pela primeira vez parecia um plano inteligente."
 },
 
 {
-evento:"tentou prender um ventilador.",
-justificativa:"Movimentação suspeita."
+evento:"📈 A empresa cresceu rapidamente.",
+justificativa:"Os investidores estavam impressionados."
 },
 
 {
-evento:"abriu um zoológico só de gatos.",
-justificativa:"Representatividade."
+evento:"📉 A empresa faliu em poucos minutos.",
+justificativa:"Todo o estoque desapareceu misteriosamente."
 },
 
 {
-evento:"declarou guerra ao aspirador.",
-justificativa:"Conflito histórico."
+evento:"🚀 Seu gato decidiu fugir para a Lua.",
+justificativa:"la ele encontrou uma coisa."
 },
 
 {
-evento:"comprou um castelo.",
-justificativa:"Precisava de espaço."
+evento:"📚 Seu gato encontrou uma biblioteca misteriosa.",
+justificativa:"Entre milhares de livros, havia uma lembrança muito especial escondida."
 },
 
 {
-evento:"tentou vender o oceano.",
-justificativa:"Água demais."
+evento:"💋 Dentro da biblioteca havia a memória de um primeiro beijo.",
+justificativa:"Uma lembrança que continuou brilhando mesmo depois de todo esse tempo."
 },
 
 {
-evento:"criou uma banda de galinhas.",
-justificativa:"Talento puro."
-},
-
-{
-evento:"trocou a internet por sardinhas.",
-justificativa:"Parecia um bom negócio."
-},
-
-{
-evento:"foi eleito prefeito.",
-justificativa:"Campanha baseada em ronronados."
-},
-
-{
-evento:"tentou roubar um banco.",
-justificativa:"Queria comprar petiscos."
-},
-
-{
-evento:"foi banido do Canadá.",
-justificativa:"Ninguém entendeu o motivo."
-},
-
-{
-evento:"comprou um submarino.",
-justificativa:"Caçar peixes ficou sério."
-},
-
-{
-evento:"tentou vender a gravidade.",
-justificativa:"Ela ocupa muito espaço."
-},
-
-{
-evento:"abriu uma pizzaria.",
-justificativa:"Todas as pizzas tinham atum."
+evento:"🧡 ele foi no estacionamento da biblioteca, seu gato encontrou uma flor laranja.",
+justificativa:"Ele percebeu que aquela flor guardava um significado enorme e algo escrito."
 }
 
 ];
@@ -174,36 +153,43 @@ adotarBtn.addEventListener("click", () => {
     tituloGato.textContent =
     "🐱 " + nomeGato;
 
-    telaInicial.style.display = "none";
+    telaInicial.style.display =
+    "none";
 
-    jogo.style.display = "block";
+    jogo.style.display =
+    "block";
 
 });
 
 botaoDesastre.addEventListener("click", () => {
 
-    const sorteado =
-    catastrofes[
-        Math.floor(
-            Math.random() *
-            catastrofes.length
-        )
-    ];
+    if(capituloAtual >= historia.length){
 
-    eventoTexto.textContent =
-    "Seu gato " + sorteado.evento;
+        abrirFinal();
 
-    justificativaTexto.textContent =
-    "💭 " + sorteado.justificativa;
+        return;
+    }
+
+    const parte =
+    historia[capituloAtual];
+
+    efeitoDigitacao(
+        eventoTexto,
+        parte.evento,
+        25
+    );
+
+    efeitoDigitacao(
+        justificativaTexto,
+        parte.justificativa,
+        12
+    );
 
     const item =
     document.createElement("li");
 
     item.textContent =
-    "🐾 " +
-    nomeGato +
-    " " +
-    sorteado.evento;
+    parte.evento;
 
     historico.prepend(item);
 
@@ -211,31 +197,65 @@ botaoDesastre.addEventListener("click", () => {
 
     banirPais();
 
+    capituloAtual++;
+
 });
+
+function efeitoDigitacao(
+elemento,
+texto,
+velocidade
+){
+
+    elemento.textContent = "";
+
+    let i = 0;
+
+    const intervalo =
+    setInterval(() => {
+
+        elemento.textContent +=
+        texto.charAt(i);
+
+        i++;
+
+        if(i >= texto.length){
+
+            clearInterval(intervalo);
+
+        }
+
+    }, velocidade);
+
+}
 
 function animarGato(){
 
     gato.style.transition =
-    "0.4s";
+    "0.5s";
 
     const rotacao =
-    (Math.random() * 30) - 15;
+    (Math.random()*20)-10;
 
     gato.style.transform =
-    `translateY(-20px) rotate(${rotacao}deg)`;
+    `translateY(-15px) rotate(${rotacao}deg)`;
 
     setTimeout(() => {
 
         gato.style.transform =
         "translateY(0px) rotate(0deg)";
 
-    },400);
+    },500);
 
 }
 
 function banirPais(){
 
-    if(Math.random() > 0.25){
+    if(capituloAtual < 10){
+        return;
+    }
+
+    if(Math.random() > 0.35){
         return;
     }
 
@@ -260,3 +280,33 @@ function banirPais(){
     pais.classList.add("banido");
 
 }
+
+function abrirFinal(){
+
+    finalSurpresa.style.display =
+    "flex";
+
+    mensagemFinal.textContent =
+`Seu gato atravessou países, guerras, empresas falidas e até a Lua para chegar até esta mensagem.
+🎂 Feliz 18 anos, Sarah!
+Você sempre disse que essa idade era importante para você e que esperava muito por ela.
+Agora que finalmente chegou nela, espero que consiga realizar todos os seus objetivos.
+Que sua vida tenha muito menos caos que a vida deste gato KKK.
+Você disse que seus pais não te deixavam ter um gatinho daqueles do IFAL.
+Então nada melhor do que criar um gatinho único e desastrado para você.
+Um gato que só você pode ter.
+Obrigado por ser uma pessoa incrível.
+Nunca se esqueça do meu amor por você.
+
+Te amo para sempre.
+
+— Ellie 💜`;
+
+}
+
+abracarGato.addEventListener("click", () => {
+
+    ronrom.textContent =
+    "🐱💜 Purrrrrrrrrrr...";
+
+});

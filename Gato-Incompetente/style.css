@@ -5,38 +5,161 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
 
-    background:
-    linear-gradient(
-        135deg,
-        #74c0fc,
-        #ffd43b
-    );
+    font-family:Arial, Helvetica, sans-serif;
 
     min-height:100vh;
 
+    overflow-x:hidden;
+
     text-align:center;
 
-    overflow-x:hidden;
+    color:white;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0b1026 0%,
+        #1d3557 40%,
+        #4361ee 100%
+    );
 }
+
+/* ESTRELAS */
+
+#estrelas{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:
+    120px 120px,
+    180px 180px,
+    250px 250px;
+
+    animation:
+    brilho 8s infinite alternate;
+
+    opacity:.7;
+}
+
+@keyframes brilho{
+
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:.9;
+    }
+
+}
+
+/* TELA INICIAL */
 
 #telaInicial{
-    padding-top:80px;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
 }
 
-#telaInicial h1{
-    font-size:2.5rem;
+.cartaoAniversario{
+
+    width:min(95%,850px);
+
+    background:
+    rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
+
+    animation:
+    surgir 1s ease;
+}
+
+@keyframes surgir{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+
+}
+
+.cartaoAniversario h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.cartaoAniversario h2{
+
+    color:#ffd166;
+
     margin-bottom:20px;
 }
 
-#telaInicial p{
-    margin-bottom:15px;
+.textoCartao{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    margin:12px 0;
 }
+
+.destaque{
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+    color:#ffd166;
+}
+
+/* INPUT */
 
 #nomeInput{
 
     width:min(90%,350px);
+
+    margin-top:20px;
 
     padding:15px;
 
@@ -45,43 +168,49 @@ body{
     border-radius:15px;
 
     font-size:18px;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.15);
 }
 
 #adotarBtn{
 
     margin-top:20px;
 
-    padding:15px 30px;
+    padding:16px 35px;
 
     border:none;
 
-    border-radius:15px;
+    border-radius:20px;
 
-    background:#51cf66;
+    background:#ff6b6b;
 
     color:white;
 
-    font-size:18px;
+    font-size:20px;
 
     cursor:pointer;
+
+    transition:.3s;
 }
 
 #adotarBtn:hover{
-    transform:scale(1.05);
+
+    transform:
+    scale(1.05);
 }
 
+/* JOGO */
+
 #jogo{
+
     padding:20px;
 }
 
 #tituloGato{
 
+    margin-top:20px;
+
     margin-bottom:10px;
 
-    color:#333;
+    color:#ffd166;
 }
 
 #gatoContainer{
@@ -90,28 +219,20 @@ body{
 
     justify-content:center;
 
-    align-items:center;
-
     margin:20px 0;
 }
 
 #gato{
 
-    width:min(80vw,320px);
-
-    height:auto;
-
-    display:block;
-
-    margin:auto;
+    width:min(90vw,350px);
 
     filter:
     drop-shadow(
-        0 15px 25px rgba(0,0,0,.25)
+        0 20px 30px rgba(0,0,0,.4)
     );
 
     animation:
-    flutuar 3s ease-in-out infinite;
+    flutuar 3s infinite ease-in-out;
 }
 
 @keyframes flutuar{
@@ -132,28 +253,20 @@ body{
 
 #cauda{
 
-    transform-origin:280px 230px;
+    transform-origin:290px 250px;
 
     animation:
-    mexerCauda 2s infinite ease-in-out;
+    cauda 2s infinite ease-in-out;
 }
 
-@keyframes mexerCauda{
+@keyframes cauda{
 
     0%{
         transform:rotate(0deg);
     }
 
-    25%{
-        transform:rotate(8deg);
-    }
-
     50%{
-        transform:rotate(0deg);
-    }
-
-    75%{
-        transform:rotate(-8deg);
+        transform:rotate(10deg);
     }
 
     100%{
@@ -164,67 +277,74 @@ body{
 
 #botaoDesastre{
 
-    background:#ff6b6b;
+    background:#06d6a0;
 
     color:white;
 
     border:none;
 
-    padding:18px 30px;
+    padding:18px 35px;
 
-    border-radius:18px;
+    border-radius:20px;
 
     font-size:20px;
 
     cursor:pointer;
 
-    margin-top:10px;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
 }
 
 #botaoDesastre:hover{
-    transform:scale(1.05);
+
+    transform:
+    scale(1.05);
 }
+
+/* CARTÃO DA HISTÓRIA */
 
 #cartao{
 
-    width:min(90%,900px);
+    width:min(95%,900px);
 
     margin:25px auto;
 
     background:white;
 
+    color:#222;
+
     border-radius:25px;
 
-    padding:25px;
+    padding:30px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,.15);
+    0 15px 40px rgba(0,0,0,.25);
 }
 
 #evento{
 
     font-size:clamp(
-        22px,
+        24px,
         4vw,
-        40px
+        42px
     );
 
-    color:#ff5722;
+    color:#4361ee;
 
     font-weight:bold;
+
+    margin-bottom:15px;
 }
 
 #justificativa{
 
-    margin-top:10px;
+    white-space:pre-line;
 
-    color:#555;
+    line-height:1.9;
 
     font-size:18px;
 }
+
+/* MAPA */
 
 #mapa{
 
@@ -245,77 +365,181 @@ body{
 
     background:white;
 
+    color:#333;
+
     padding:12px 18px;
 
     border-radius:15px;
-
-    box-shadow:
-    0 3px 10px rgba(0,0,0,.1);
 
     transition:.3s;
 }
 
 .banido{
 
-    background:#fa5252;
+    background:#ef476f;
 
     color:white;
 
     transform:
-    scale(1.1)
-    rotate(-3deg);
+    rotate(-4deg)
+    scale(1.1);
 }
+
+/* HISTÓRICO */
 
 #historico{
 
-    list-style:none;
-
-    width:min(90%,900px);
+    width:min(95%,900px);
 
     margin:25px auto;
 
-    background:white;
-
-    padding:25px;
-
-    border-radius:25px;
+    list-style:none;
 
     text-align:left;
 
-    box-shadow:
-    0 8px 25px rgba(0,0,0,.15);
+    background:white;
+
+    color:#222;
+
+    border-radius:25px;
+
+    padding:25px;
 }
 
 #historico li{
 
+    background:#fff4cc;
+
     margin-bottom:10px;
 
-    background:#fff3bf;
+    padding:12px;
 
-    padding:10px;
-
-    border-radius:10px;
+    border-radius:12px;
 }
 
-h2{
+/* FINAL */
+
+#finalSurpresa{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    z-index:999;
+}
+
+.finalCard{
+
+    width:min(95%,900px);
+
+    background:white;
+
+    color:#222;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+}
+
+.finalCard h1{
+
+    color:#ff4d6d;
+
+    margin-bottom:25px;
+}
+
+#mensagemFinal{
+
+    white-space:pre-line;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+}
+
+#abracarGato{
+
+    border:none;
+
+    padding:18px 35px;
+
+    border-radius:20px;
+
+    background:#8338ec;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+#ronrom{
 
     margin-top:25px;
 
-    color:#333;
+    font-size:32px;
+
+    color:#8338ec;
+
+    font-weight:bold;
 }
+
+/* CELULAR */
 
 @media(max-width:600px){
 
-    #botaoDesastre{
+    .cartaoAniversario{
 
-        width:90%;
-
-        font-size:18px;
+        padding:20px;
     }
 
-    #tituloGato{
+    .cartaoAniversario h1{
 
-        font-size:1.8rem;
+        font-size:2.2rem;
+    }
+
+    .cartaoAniversario h2{
+
+        font-size:1.5rem;
+    }
+
+    .textoCartao{
+
+        font-size:1rem;
+    }
+
+    #evento{
+
+        font-size:1.5rem;
+    }
+
+    #justificativa{
+
+        font-size:16px;
+    }
+
+    #adotarBtn,
+    #botaoDesastre,
+    #abracarGato{
+
+        width:90%;
     }
 
 }
